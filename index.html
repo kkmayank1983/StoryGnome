@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StoryGnome</title>
+    <style>
+        body {
+            background: url('https://wallpaperaccess.com/full/397876.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff; /* Dark text color */
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Kid-friendly font */
+            text-align: center;
+            padding: 20px;
+        }
+
+        #story-gnome {
+            color: #ff6600; /* Orange heading color */
+            font-size: 36px;
+            opacity: 0; /* Initially hidden */
+            animation: fadeIn 3s ease-in-out; /* Fade-in animation */
+            animation-fill-mode: forwards; /* Maintain opacity after animation ends */
+        }
+
+        #description {
+            font-size: 18px;
+            opacity: 0; /* Initially hidden */
+            animation: fadeIn 3s ease-in-out 1s; /* Fade-in animation with a delay of 1s */
+            animation-fill-mode: forwards; /* Maintain opacity after animation ends */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        form {
+            margin-top: 40px;
+        }
+
+        button {
+            font-size: 0; /* Set font-size to 0 to hide text */
+            width: 150px; /* Set the width to match the image width */
+            height: 150px; /* Set the height to match the image height */
+            background-image: url('https://img.freepik.com/premium-vector/christmas-card-with-gnome_72287-215.jpg?w=360'); /* Placeholder gnome image */
+            background-size: cover;
+            border-radius: 50%; /* Make the button round */
+            padding: 0; /* Remove padding */
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #e25822; /* Darker orange on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1 id="story-gnome">StoryGnome</h1>
+    <p id="description">
+        Welcome to StoryGnome! This magical gnome is here to tell you enchanting stories. 
+        Simply click on the Gnome below, and speak out the kind of story you'd like to hear. 
+        StoryGnome will weave a tale just for you! Get ready for a journey into the world of imagination.
+    </p>
+    <form action="/process_audio" method="post">
+        <button type="submit"></button>
+        <div>
+            <label for="audio_enabled">Enable Audio</label>
+            <input type="checkbox" id="audio_enabled" name="audio_enabled" value="true" checked>
+        </div>
+    </form>
+</body>
+</html>
